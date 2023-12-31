@@ -2,3 +2,5 @@ python-dotenv
 openai
 google-generativeai
 pillow
+SpeechRecognition
+PyAudio

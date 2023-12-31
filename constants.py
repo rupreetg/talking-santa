@@ -1,4 +1,5 @@
-GPT_MODEL = "gpt-4-1106-preview"
-GPT_VISION_MODEL = "gpt-4-vision-preview"
+OPENAI_MODEL = "gpt-4-1106-preview"
+OPENAI_VISION_MODEL = "gpt-4-vision-preview"
+OPENAI_WHISPER_MODEL = "whisper-1"
 GOOGLE_MODEL = "gemini-pro"
 GOOGLE_VISION_MODEL = "gemini-pro-vision"

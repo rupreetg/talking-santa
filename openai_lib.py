@@ -8,7 +8,7 @@ client.api_key = os.getenv('OPENAI_API_KEY')
 
 def chat(prompt, system_prompt):
     response = client.chat.completions.create(
-        model=constants.GPT_MODEL,
+        model=constants.OPENAI_MODEL,
         messages=
         [
             {
@@ -26,7 +26,7 @@ def chat(prompt, system_prompt):
 
 def look(prompt, image_path):
     image_response = client.chat.completions.create(
-    model=constants.GPT_VISION_MODEL,
+    model=constants.OPENAI_VISION_MODEL,
     messages = 
     [
         {
@@ -44,6 +44,14 @@ def look(prompt, image_path):
             ]
         }
     ],
-    max_tokens=500
+    max_tokens=1024
     )
     return image_response.choices[0].message.content
+
+#converts audio to text using Whisper model
+def speechToText(audio_file):
+    return client.audio.transcriptions.create(
+    model=constants.OPENAI_WHISPER_MODEL, 
+    file=open(audio_file, "rb"),
+    response_format="text"
+    )
