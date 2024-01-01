@@ -8,6 +8,7 @@
 
 import speech_recognition as sr
 import openai_lib
+import elevenlab_lib
 
 recognizer = sr.Recognizer()
 
@@ -24,5 +25,6 @@ system_prompt = """You are a Santa. You will get prompts from user as if they ar
                 like you are talking to children from Santa. You should be funny and interesting. Don't add any emoji in the response. """
 
 gpt_text = openai_lib.chat(speechToText, system_prompt)
-
 print(gpt_text)
+
+elevenlab_lib.speak(gpt_text)
