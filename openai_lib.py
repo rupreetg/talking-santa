@@ -49,7 +49,7 @@ def look(prompt, image_path):
     return image_response.choices[0].message.content
 
 #converts audio to text using Whisper model
-def speechToText(audio_file):
+def transcribe(audio_file):
     return client.audio.transcriptions.create(
     model=constants.OPENAI_WHISPER_MODEL, 
     file=open(audio_file, "rb"),
